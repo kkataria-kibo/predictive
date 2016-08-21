@@ -22,5 +22,11 @@ public class ProductSearchRepository {
 									Criteria.where("name").regex(text, "i"))
 						), Product.class);
 	}
+
+	public Collection<Product> searchOrgProducts(String text) {
+		return mongoTemplate.find(Query.query(new Criteria()
+				.orOperator(Criteria.where("brand").regex(text, "i"))
+		), Product.class);
+	}
 	
 }

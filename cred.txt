@@ -1,0 +1,12 @@
+TO SET JAVA PATH
+
+export JAVA_HOME=/etc/alternatives/java_sdk_1.8.0
+export PATH=$JAVA_HOME/bin:$PATH
+
+java -jar -Dserver.port=${OPENSHIFT_DIY_PORT} -Dserver.address=${OPENSHIFT_DIY_IP} -Dspring.data.mongodb.host=$OPENSHIFT_MONGODB_DB_HOST -Dspring.data.mongodb.username=admin -Dspring.data.mongodb.password=EDwiJjuYwiTx -Dspring.data.mongodb.database=diy -Dspring.data.mongodb.port=$OPENSHIFT_MONGODB_DB_PORT predictive-0.0.1-SNAPSHOT.jar
+
+
+
+
+Root User:     admin
+   Root Password: EDwiJjuYwiTx

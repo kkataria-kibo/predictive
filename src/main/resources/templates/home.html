@@ -19,6 +19,7 @@
 					<th>Name</th>
 					<th>Description</th>
 					<th>Code</th>
+					<th>ImageURL</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -27,6 +28,7 @@
 					<td th:text="${product.code}"></td>
 					<td th:text="${product.description}"></td>
 					<td th:text="${product.sku}"></td>
+					<td th:text="${product.imageURL}"></td>
 				</tr>
 			</tbody>
 		</table>
@@ -36,6 +38,7 @@
 			Name <input type="text" id="name" name="name" /><br />
 			Code <input type="text" id="code" name="code" /><br />
 			SKU <input type="text" id="sku" name="sku" /><br />
+			Image <input type="text" id="imageURL" name="imageURL" /><br />
 			Description <textarea rows="5" cols="70" id="description" name="description" /><br />
 			<input type="submit" />
 		</form>

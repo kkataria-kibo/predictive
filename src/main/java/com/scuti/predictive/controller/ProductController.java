@@ -28,6 +28,7 @@ public class ProductController {
 	
 	@RequestMapping(value = "/addProduct", method = RequestMethod.POST)
 	public String addProduct(@ModelAttribute Product product) {
+		product.setBrand("bobeau");
 		productMongoRepository.save(product);
 		return "redirect:home";
 	}
