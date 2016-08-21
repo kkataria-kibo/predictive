@@ -17,7 +17,7 @@ public class RecommendationController {
     @Autowired
     ProductSearchRepository productSearchRepository;
 
-    @RequestMapping(value = "/{org}/recommend" , method = RequestMethod.GET)
+    @RequestMapping(value = "/{org}/recommend" , method = RequestMethod.GET , produces = "application/json")
     public Collection<Product> recommend(@PathVariable("org") String name) {
         return  productSearchRepository.searchOrgProducts(name);
     }
