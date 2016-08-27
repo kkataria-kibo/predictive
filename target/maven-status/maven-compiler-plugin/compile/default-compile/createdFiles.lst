@@ -1,7 +1,9 @@
 com\scuti\predictive\controller\ProductController.class
 com\scuti\predictive\model\Customer.class
-com\scuti\predictive\repository\CustomerRepository.class
 com\scuti\predictive\model\Product.class
 com\scuti\predictive\repository\ProductSearchRepository.class
 com\scuti\predictive\PredictiveApplication.class
+com\scuti\predictive\repository\CustomerRepository.class
+com\scuti\predictive\config\WebSecurityConfig.class
+com\scuti\predictive\controller\RecommendationController.class
 com\scuti\predictive\repository\ProductMongoRepository.class

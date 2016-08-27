@@ -23,17 +23,21 @@
 				contentType : "application/json",
 				dataType : 'jsonp',
 				success : function(json) {
+					alert();
 					WebRecManager.showPage(page,json);
 				},
 				error : function(e) {
+					alert(e);
 					console.log("error" + e);
 				}
 			});
 		},
 		showPage:function(page,json){
-			/*var data = json[0]._embedded.products;	
+			var data = JSON.parse(json);	
+			console.log("test");
+			console.log(data);
 
-			var html = "";
+			/*var html = "";
 	        for (var i = 0; i < data.length; i++) {			
 				var name = data[i].name;
 				var code = data[i].code;
@@ -47,6 +51,6 @@
 		
 	}
 </script>
-<script>WebRecManager.startWebRec('http://diy-scuti.rhcloud.com/products','demo');</script>
+<script>WebRecManager.startWebRec('http://diy-scuti.rhcloud.com/bobeau/recommend','demo');</script>
  </body>
 </html>

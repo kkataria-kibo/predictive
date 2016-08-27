@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+ </head>
+ <body>
+ <script   src="https://code.jquery.com/jquery-3.1.0.min.js"   integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s="   crossorigin="anonymous"></script>
+
+  <script defer="true" type="text/javascript">
+	var WebRecManager = {
+		page:'test',
+		startWebRec : function(url, page) {
+			$.ajax({
+				type : 'GET',
+				url : url,
+				async : false,
+				jsonpCallback : 'jsonCallback',
+				contentType : "application/json",
+				dataType : 'jsonp',
+				success : function(json) {
+					alert();
+					WebRecManager.showPage(page,json);
+				},
+				error : function(e) {
+					alert("ee");
+					console.log("error" + e);
+				}
+			});
+		},
+		showPage:function(page,json){
+			var data = JSON.parse(json);	
+			console.log("test");
+			console.log(data);
+
+			/*var html = "";
+	        for (var i = 0; i < data.length; i++) {			
+				var name = data[i].name;
+				var code = data[i].code;
+				var desc = data[i].description;
+				console.log(name);
+				console.log(code);
+				console.log(desc);
+			}
+	        */
+	    }
+		
+	}
+</script>
+<script>WebRecManager.startWebRec('http://diy-scuti.rhcloud.com/bobeau/recommend','demo');</script>
+ </body>
+</html>

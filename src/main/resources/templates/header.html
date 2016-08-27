@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html th:fragment="header">
+
+<head>
+    <title>Predictive Intelligence by ScutiConnect</title>
+    <link href="/css/bootstrap.min.css" rel="stylesheet" media="screen" th:href="@{/css/bootstrap.min.css}"/>
+    <script src="/js/jquery-latest.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+</head>
+<body>
+<!-- Navbar -->
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">ScutiCommerce</a>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li th:classappend="${page == 'home' ? 'active' : ''}"><a href="#" th:href="@{/}">Home</a></li>
+                <li th:classappend="${page == 'products' ? 'active' : ''}"><a href="#" th:href="@{/products}">Products</a></li>
+                <li th:classappend="${page == 'orders' ? 'active' : ''}"><a href="#" th:href="@{/orders}">Orders</a></li>
+                <li th:classappend="${page == 'customers' ? 'active' : ''}"><a href="#" th:href="@{/customers}">Customers</a></li>
+                <li th:classappend="${page == 'recommendation' ? 'active' : ''}"><a href="#" th:href="@{/recommend}">Recommendations</a></li>
+
+            </ul>
+
+        </div>
+        <!--/.nav-collapse -->
+    </div>
+</div>
+</body>
+</html>
