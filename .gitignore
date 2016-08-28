@@ -1,0 +1,17 @@
+*.class
+.mtj.tmp/
+*.jar
+*.war
+*.ear
+*.iml
+output.txt
+generate-output.sh
+.idea/
+target/
+overlays/
+catalina.base_IS_UNDEFINED/
+dependencies.txt
+/.settings/
+/.classpath
+/.project
+hs_err_pid*
