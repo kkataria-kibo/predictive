@@ -1,21 +1,39 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<html>
+<head>    
+<title>ScutiCommerce</title>>
+ <link href="/css/bootstrap.min.css" rel="stylesheet" media="screen" th:href="@{/css/bootstrap.min.css}"/>
+ <link href="/css/core.css" rel="stylesheet" media="screen" th:href="@{/css/core.css}"/>
+</head>
 
 <body>
 
 <div th:if="${param.error}">Invalid username and password.</div>
-<form th:action="@{/login}" method="post">
-    <div>
-        <label> User Name : <input type="text" name="username" />
-        </label>
+<div class="frm-ot">
+<img src="@{/images/logo.png}" alt="scuticommerce" class="logo" th:src="@{/images/logo.png}"/>
+<form th:action="@{/login}" method="post" class="form-horizontal">
+
+  <div class="form-group">    
+    <div class="col-sm-12">
+      <input type="email" name="username" class="form-control" placeholder="Username" />
     </div>
-    <div>
-        <label> Password: <input type="password" name="password" />
-        </label>
+  </div>
+
+  <div class="form-group">    
+    <div class="col-sm-12">
+      <input type="password" name="password" class="form-control" placeholder="Password" />
     </div>
-    <div>
-        <input type="submit" value="Sign In" />
+  </div>
+
+
+   <div class="form-group">
+    <div class="col-sm-12">
+      <button type="submit" class="btn btn-default sbt-btn">Sign in</button>
     </div>
+  </div>
 </form>
+<div class="clearfix"></div>
+<div class="copy">&copy; copyright ScutiCommerce</div>
+</div>
 </body>
 </html>
