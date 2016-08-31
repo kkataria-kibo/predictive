@@ -20,24 +20,24 @@ public class ProductController {
 	@Autowired
 	ProductSearchRepository productSearchRepository;
 	
-	@RequestMapping("/home")
+	@RequestMapping("/product")
 	public String home(Model model) {
 		model.addAttribute("productList", productMongoRepository.findAll());
-		return "home";
+		return "product";
 	}
 	
 	@RequestMapping(value = "/addProduct", method = RequestMethod.POST)
 	public String addProduct(@ModelAttribute Product product) {
 		product.setBrand("bobeau");
 		productMongoRepository.save(product);
-		return "redirect:home";
+		return "redirect:product";
 	}
 	
 	@RequestMapping(value = "/search")
 	public String search(Model model, @RequestParam String search) {
 		model.addAttribute("productList", productSearchRepository.searchProduct(search));
 		model.addAttribute("search", search);
-		return "home";
+		return "product";
 	}
 	
 }

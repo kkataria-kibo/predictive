@@ -22,13 +22,11 @@
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
                 <li th:classappend="${page == 'home' ? 'active' : ''}"><a href="#" th:href="@{/}">Home</a></li>
-                <li th:classappend="${page == 'products' ? 'active' : ''}"><a href="#" th:href="@{/products}">Products</a></li>
-                <li th:classappend="${page == 'orders' ? 'active' : ''}"><a href="#" th:href="@{/orders}">Orders</a></li>
-                <li th:classappend="${page == 'customers' ? 'active' : ''}"><a href="#" th:href="@{/customers}">Customers</a></li>
+                <li th:classappend="${page == 'product' ? 'active' : ''}"><a href="#" th:href="@{/product}">Products</a></li>
+                <li th:classappend="${page == 'order' ? 'active' : ''}"><a href="#" th:href="@{/order}">Orders</a></li>
+                <li th:classappend="${page == 'customer' ? 'active' : ''}"><a href="#" th:href="@{/customer}">Customers</a></li>
                 <li th:classappend="${page == 'recommendation' ? 'active' : ''}"><a href="#" th:href="@{/recommend}">Recommendations</a></li>
                 <li th:classappend="${page == 'configuration' ? 'active' : ''}"><a href="#" th:href="@{/configuration}">Configuration</a></li>
-
-
             </ul>
 
         </div>

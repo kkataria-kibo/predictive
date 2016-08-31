@@ -18,7 +18,14 @@ public class PredictiveApplication extends WebMvcConfigurerAdapter {
 
 	public void addViewControllers(ViewControllerRegistry registry) {
 		registry.addViewController("/login").setViewName("login");
-		registry.addViewController("/home").setViewName("home");
+		registry.addViewController("/").setViewName("home");
+		registry.addViewController("/product").setViewName("product");
+		registry.addViewController("/order").setViewName("order");
+		registry.addViewController("/recommend").setViewName("recommend");
+		registry.addViewController("/customer").setViewName("customer");
+		registry.addViewController("/configuration").setViewName("configuration");
+
+
 	}
 
 	/*@Bean
