@@ -36,6 +36,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
         auth
                 .inMemoryAuthentication()
-                .withUser("scuticommerce").password("Devil@707").roles("USER");
+                .withUser("admin@scuticommerce.com").password("Devil@707").roles("USER");
     }
 }
