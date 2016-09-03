@@ -1,14 +1,11 @@
 package com.scuti.predictive.controller;
 
-import com.scuti.predictive.model.Product;
-import com.scuti.predictive.repository.ProductSearchRepository;
+import com.scuti.predictive.model.ScutiConfiguration;
+import com.scuti.predictive.repository.ConfigurationRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 
 /**
@@ -18,8 +15,28 @@ import org.springframework.web.bind.annotation.RestController;
 @Controller
 public class ConfigurationController {
 
+    @Autowired
+    ConfigurationRepository
+            configRepository;
+
     @RequestMapping("/configuration")
     public String home(Model model) {
+        model.addAttribute("configurationList", configRepository.findAll());
+        return "configuration";
+    }
+
+    @RequestMapping(value = "/addConfig", method = RequestMethod.POST)
+    public String addConfiguration(@ModelAttribute ScutiConfiguration config) {
+
+        configRepository.save(config);
+        return "redirect:configuration";
+    }
+
+    @RequestMapping(value = "/deleteConfig/{id}", method = RequestMethod.GET)
+    public String deleteConfiguration(@PathVariable("id") String id, Model model) {
+
+        configRepository.delete(id);
+        model.addAttribute("configurationList", configRepository.findAll());
 
         return "configuration";
     }
