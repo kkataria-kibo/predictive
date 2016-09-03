@@ -34,7 +34,8 @@ body {
   }
 .copy{
     position: fixed;
-    bottom: 0;    
+    bottom: 0; 
+    left: 0;  
    color:#fff;
    text-align: center;    
    background: #424242;
@@ -42,3 +43,18 @@ body {
    padding: 10px 0; 
    opacity: 0.6;
 }
+
+/* 3-9-2016 */
+.srt-rw{
+    background: #F2F2F2;
+    padding: 10px;
+  }
+  .form-inline .form-control{
+    width: auto;
+  }
+  .navbar{
+    border-radius: 0;    
+  }
+  .dataTables_filter{
+    float: right;
+  }

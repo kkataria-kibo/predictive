@@ -26,7 +26,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">ScutiCommerce</a>
+            <a class="navbar-brand" href="#" style=" padding: 0 !important;"><img src="@{/images/logo.png}" alt="scuticommerce" class="logo" th:src="@{/images/logo.png}" style="height: 55px;" /></a>
         </div>
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
@@ -37,7 +37,15 @@
                 <li th:classappend="${page == 'recommendation' ? 'active' : ''}"><a href="#" th:href="@{/recommend}">Recommendations</a></li>
                 <li th:classappend="${page == 'configuration' ? 'active' : ''}"><a href="#" th:href="@{/configuration}">Configuration</a></li>
             </ul>
-
+             <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown clearfix-col-3">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Welcome Bhartendu <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Profile</a></li>
+            <li><a href="#">Logout</a></li>            
+          </ul>
+        </li>
+            </ul>
         </div>
         <!--/.nav-collapse -->
     </div>

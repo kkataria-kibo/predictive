@@ -6,6 +6,13 @@
 	<script>$(document).ready(function() {
 		$('#product').DataTable();
 	} );</script>
+	<div class="container">
+
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary pull-right" data-toggle="modal" data-target="#myModal">Add product</button>
+<div>&nbsp;</div>
+<div class="clearfix"></div>
+
 		<table id="product" class="table table-striped table-bordered">
 			<thead>
 				<tr>
@@ -28,21 +35,54 @@
 				</tr>
 			</tbody>
 		</table>
-		<br />
-		<h2>Add Product</h2>
-		<form action="/addProduct" method="POST">
-			Name <input type="text" id="name" name="name" /><br />
-			Code <input type="text" id="code" name="code" /><br />
-			SKU <input type="text" id="sku" name="sku" /><br />
-			Image <input type="text" id="imageURL" name="imageURL" /><br />
-			Description <textarea rows="5" cols="70" id="description" name="description" /><br />
-			<input type="submit" />
-		</form>
+		
+		
 		<h2>Search for products</h2>
 		<form action="/search" method="POST">
 			<input type="text" name="search" id="search" th:value="${search}" />
 			<input type="submit" value="Search" />
 		</form>
+		</div>
+
+
+		<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Add Product </h4>
+      </div>
+      <div class="modal-body">
+       
+
+       <form action="/addProduct" method="POST">
+       <div class="form-group">
+			<input type="text" id="name" name="name"  class="form-control" placeholder="Name" />
+			</div>
+			<div class="form-group">
+			 <input type="text" id="code" name="code" class="form-control" placeholder="Code" />
+			 </div>
+			 <div class="form-group">
+			 <input type="text" id="sku" name="sku" class="form-control" placeholder="SKU" />
+			 </div>
+			 <div class="form-group">
+			 <input type="text" id="imageURL" name="imageURL" class="form-control" placeholder="Image URL" />
+			 </div>
+			 <div class="form-group">
+			<textarea rows="5" cols="70" id="description" name="description" class="form-control" placeholder="Description"></textarea>
+			</div>
+			<div class="form-group">
+			<input type="submit" class="btn btn-primary" data-dismiss="modal" value="Add product" />
+			</div>
+		</form>
+
+
+
+      </div>      
+    </div>
+  </div>
+</div>
 	</body>
 <div th:include="footer :: footer"></div>
 </html>
