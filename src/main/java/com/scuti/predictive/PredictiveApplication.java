@@ -3,10 +3,14 @@ package com.scuti.predictive;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
+import org.springframework.security.oauth2.config.annotation.web.configuration.EnableAuthorizationServer;
+import org.springframework.security.oauth2.config.annotation.web.configuration.EnableOAuth2Client;
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
 @SpringBootApplication
+@EnableOAuth2Client
+@EnableAuthorizationServer
 @EnableMongoRepositories("com.scuti.predictive.repository")
 public class PredictiveApplication extends WebMvcConfigurerAdapter {
 
