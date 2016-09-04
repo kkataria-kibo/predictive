@@ -22,14 +22,14 @@ public class ConfigurationController {
     @RequestMapping("/configuration")
     public String home(Model model) {
         model.addAttribute("configurationList", configRepository.findAll());
-        return "configuration";
+        return "/configuration/configuration";
     }
 
     @RequestMapping(value = "/addConfig", method = RequestMethod.POST)
     public String addConfiguration(@ModelAttribute ScutiConfiguration config) {
 
         configRepository.save(config);
-        return "redirect:configuration";
+        return "redirect:/configuration/configuration";
     }
 
     @RequestMapping(value = "/deleteConfig/{id}", method = RequestMethod.GET)
@@ -38,7 +38,7 @@ public class ConfigurationController {
         configRepository.delete(id);
         model.addAttribute("configurationList", configRepository.findAll());
 
-        return "configuration";
+        return "/configuration/configuration";
     }
 
 }

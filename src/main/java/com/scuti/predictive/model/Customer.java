@@ -8,17 +8,50 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Document(collection = "Customer")
 public class Customer {
 
-
-    public String id;
     public String email;
+    public String id;
     public String userName;
     public String password;
     public String hint;
-    public String hintAnswer;
+     public String hintAnswer;
     public String guest;
+    public String status;
+    public String group;
 
     public Customer() {
     }
+
+    @Override
+    public String toString() {
+        return "Customer{" +
+                "email='" + email + '\'' +
+                ", id='" + id + '\'' +
+                ", userName='" + userName + '\'' +
+                ", password='" + password + '\'' +
+                ", hint='" + hint + '\'' +
+                ", hintAnswer='" + hintAnswer + '\'' +
+                ", guest='" + guest + '\'' +
+                ", status='" + status + '\'' +
+                ", group='" + group + '\'' +
+                '}';
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public String getGroup() {
+        return group;
+    }
+
+    public void setGroup(String group) {
+        this.group = group;
+    }
+
 
     public String getId() {
         return id;

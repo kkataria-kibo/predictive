@@ -7,12 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.Map;
 
-/**
- * Simplest possible implementation for accessing the MongoDB
- * to persist job history documents.
- * 
- * @author Niko Schmuck
- */
+
 @Repository
 public class JobHistoryRepository {
 

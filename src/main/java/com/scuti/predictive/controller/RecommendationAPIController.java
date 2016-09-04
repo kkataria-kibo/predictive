@@ -1,9 +1,8 @@
 package com.scuti.predictive.controller;
 
 import com.scuti.predictive.model.Product;
-import com.scuti.predictive.repository.ProductSearchRepository;
+import com.scuti.predictive.repository.SearchRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Collection;
@@ -16,7 +15,7 @@ import java.util.Collection;
 public class RecommendationAPIController {
 
     @Autowired
-    ProductSearchRepository productSearchRepository;
+    SearchRepository productSearchRepository;
 
     @RequestMapping(value = "/{org}/recommend" , method = RequestMethod.GET , produces = "application/json")
     public Collection<Product> recommend(@PathVariable("org") String name) {

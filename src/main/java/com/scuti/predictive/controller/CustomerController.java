@@ -21,14 +21,14 @@ public class CustomerController {
     @RequestMapping("/customer")
     public String home(Model model) {
         model.addAttribute("customerList", customerRepository.findAll());
-        return "customer";
+        return "/customer/customer";
     }
 
     @RequestMapping(value = "/addCustomer", method = RequestMethod.POST)
     public String addConfiguration(@ModelAttribute Customer customer) {
 
         customerRepository.save(customer);
-        return "redirect:customer";
+        return "redirect:/customer/customer";
     }
 
     @RequestMapping(value = "/deleteCustomer/{id}", method = RequestMethod.GET)
@@ -37,7 +37,7 @@ public class CustomerController {
         customerRepository.delete(id);
         model.addAttribute("customerList", customerRepository.findAll());
 
-        return "customer";
+        return "/customer/customer";
     }
 
 

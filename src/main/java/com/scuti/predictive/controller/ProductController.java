@@ -2,7 +2,7 @@ package com.scuti.predictive.controller;
 
 import com.scuti.predictive.model.Product;
 import com.scuti.predictive.repository.ProductRepository;
-import com.scuti.predictive.repository.ProductSearchRepository;
+import com.scuti.predictive.repository.SearchRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -15,26 +15,26 @@ public class ProductController {
 	ProductRepository productRepository;
 	
 	@Autowired
-	ProductSearchRepository productSearchRepository;
+	SearchRepository searchRepository;
 	
 	@RequestMapping("/product")
 	public String home(Model model) {
 		model.addAttribute("productList", productRepository.findAll());
-		return "product";
+		return "/product/product";
 	}
 	
 	@RequestMapping(value = "/addProduct", method = RequestMethod.POST)
 	public String addProduct(@ModelAttribute Product product) {
 		product.setBrand("bobeau");
 		productRepository.save(product);
-		return "redirect:product";
+		return "redirect:/product/product";
 	}
 	
-	@RequestMapping(value = "/search")
+	@RequestMapping(value = "/searchProducts")
 	public String search(Model model, @RequestParam String search) {
-		model.addAttribute("productList", productSearchRepository.searchProduct(search));
+		model.addAttribute("productList", searchRepository.searchProduct(search));
 		model.addAttribute("search", search);
-		return "product";
+		return "/product/product";
 	}
 
 	@RequestMapping(value = "/deleteProduct/{id}", method = RequestMethod.GET)
@@ -43,7 +43,7 @@ public class ProductController {
 		productRepository.delete(id);
 		model.addAttribute("productList", productRepository.findAll());
 
-		return "product";
+		return "/product/product";
 	}
 
 

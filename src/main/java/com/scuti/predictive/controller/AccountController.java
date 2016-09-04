@@ -9,11 +9,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
  */
 
 @Controller
-public class HomeController {
+public class AccountController {
 
-    @RequestMapping("/")
+    @RequestMapping("/account")
     public String home(Model model) {
-        return "home";
+        return "/account/account";
     }
 
 }

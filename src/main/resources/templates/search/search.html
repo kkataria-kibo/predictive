@@ -1,0 +1,34 @@
+<html>
+<body>
+Search Result
+<table id="search" class="table table-striped table-bordered">
+    <thead>
+
+    </thead>
+    <tbody>
+    <tr th:each="search : ${searchMap}">
+
+
+        <div th:switch="${search.key}">
+
+            <p th:case="'product'">
+            <td th:text="${search.key}"></td>
+                <div th:each="product : ${search.value}">
+                  <td th:text="${{product.name}}"></td>
+                 </div>
+            </p>
+
+            <p th:case="'customer'">
+            <td th:text="${search.key}"></td>
+                <div th:each="customer : ${search.value}">
+                  <td th:text="${{customer.email}}"></td>
+                 </div>
+            </p>
+
+        </div>
+
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

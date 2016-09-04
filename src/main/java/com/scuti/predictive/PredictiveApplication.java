@@ -24,6 +24,8 @@ public class PredictiveApplication extends WebMvcConfigurerAdapter {
 		registry.addViewController("/recommend").setViewName("recommend");
 		registry.addViewController("/customer").setViewName("customer");
 		registry.addViewController("/configuration").setViewName("configuration");
+		//registry.addViewController("/reports").setViewName("reports");
+		registry.addViewController("/help").setViewName("help");
 
 
 	}
