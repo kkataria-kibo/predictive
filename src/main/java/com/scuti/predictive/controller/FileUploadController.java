@@ -30,32 +30,56 @@ public class FileUploadController {
     @RequestMapping(value = "/file/uploadProducts", method = RequestMethod.POST)
     @ResponseBody
     @ResponseStatus(HttpStatus.OK)
-    public AjaxResponse giftCertificateUpload(@RequestParam("file") MultipartFile file)
+    public AjaxResponse productUpload(@RequestParam("file") MultipartFile file)
             throws Exception {
 
         AjaxResponse resp = new AjaxResponse();
         CSVParser parser = null;
         String fileName = file.getOriginalFilename();
-
         try {
-
             File realFile = File.createTempFile("fileUpload", "csv");
             realFile.deleteOnExit();
             file.transferTo(realFile);
-
             parser = CSVParser.parse(realFile, Charset.forName(StandardCharsets.UTF_8.name()), CSVFormat.DEFAULT.withHeader());
-
         }
         catch(IOException e) {
-
             log.error(e.getMessage(), e);
             resp.setSuccess(false);
             resp.addProperty("banner", "Failure parsing file. No records saved." + e.getMessage());
             return resp;
         }
-
         boolean result = importUtil.parseCSV(parser);
+        if(result) {
+            resp.addProperty("success", "success");
+            resp.setSuccess(true);
+        } else {
+            resp.addProperty("failure", "failure");
+            resp.setSuccess(false);
+        }
+        return resp;
+    }
+    @RequestMapping(value = "/file/uploadOrders", method = RequestMethod.POST)
+    @ResponseBody
+    @ResponseStatus(HttpStatus.OK)
+    public AjaxResponse orderUpload(@RequestParam("file") MultipartFile file)
+            throws Exception {
 
+        AjaxResponse resp = new AjaxResponse();
+        CSVParser parser = null;
+        String fileName = file.getOriginalFilename();
+        try {
+            File realFile = File.createTempFile("fileUpload", "csv");
+            realFile.deleteOnExit();
+            file.transferTo(realFile);
+            parser = CSVParser.parse(realFile, Charset.forName(StandardCharsets.UTF_8.name()), CSVFormat.DEFAULT.withHeader());
+        }
+        catch(IOException e) {
+            log.error(e.getMessage(), e);
+            resp.setSuccess(false);
+            resp.addProperty("banner", "Failure parsing file. No records saved." + e.getMessage());
+            return resp;
+        }
+        boolean result = importUtil.parseOrderCSV(parser);
         if(result) {
             resp.addProperty("success", "success");
             resp.setSuccess(true);

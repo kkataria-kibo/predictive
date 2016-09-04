@@ -8,15 +8,62 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Document(collection = "Customer")
 public class Customer {
 
-    public String email;
-    public String id;
-    public String userName;
-    public String password;
-    public String hint;
-     public String hintAnswer;
-    public String guest;
-    public String status;
-    public String group;
+    private String firstName;
+    private String lastName;
+    private String prefix;
+    private String suffix;
+
+    public String getSuffix() {
+        return suffix;
+    }
+
+    public void setSuffix(String suffix) {
+        this.suffix = suffix;
+    }
+
+    public String getPrefix() {
+        return prefix;
+    }
+
+    public void setPrefix(String prefix) {
+        this.prefix = prefix;
+    }
+
+    public String getMiddleName() {
+        return middleName;
+    }
+
+    public void setMiddleName(String middleName) {
+        this.middleName = middleName;
+    }
+
+    private String middleName;
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    private String email;
+    private String id;
+    private String userName;
+    private String password;
+    private String hint;
+    private String hintAnswer;
+    private String guest;
+    private String status;
+    private String group;
 
     public Customer() {
     }
