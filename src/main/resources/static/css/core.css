@@ -3,7 +3,9 @@ body {
     background:url("../images/bg.jpg") no-repeat bottom center fixed;
     background-size: cover; 
 }
-
+.navbar{
+    border-radius: 0 !important;
+}
 .frm-ot {
     border: none;
     text-align: center;
@@ -52,9 +54,22 @@ body {
   .form-inline .form-control{
     width: auto;
   }
-  .navbar{
-    border-radius: 0;    
-  }
+
   .dataTables_filter{
     float: right;
   }
+.navbar-inverse{
+    border-radius:0px;
+}
+
+#search{
+    background-color: rgba(255,255,255, 0.2);
+    border: rgba(255,255,255, 0.2) solid 1px;
+}
+.btn-srch-sel{
+    background: rgba(255,255,255,0.6);
+    opacity: 0.9;
+}
+.navbar-right li a{
+    padding-top:0;
+}

@@ -26,35 +26,67 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#" style=" padding: 0 !important;"><img src="@{/images/logo.png}" alt="scuticommerce" class="logo" th:src="@{/images/logo.png}" style="height: 55px;" /></a>
+            <a class="navbar-brand" href="#" style=" padding: 0 !important;"><img src="@{/images/logo-small.png}" alt="scuticommerce" class="logo" th:src="@{/images/logo-small.png}" style="height: 55px;" /></a>
         </div>
-        <form action="/searchAll" method="POST">
-            <input type="text" name="search" id="search" th:value="${search}" />
-            <input type="submit" value="Search" />
-        </form>
-        <div class="navbar-collapse collapse">
-            <ul class="nav navbar-nav">
-                <li th:classappend="${page == 'home' ? 'active' : ''}"><a href="#" th:href="@{/}">Home</a></li>
-                <li th:classappend="${page == 'product' ? 'active' : ''}"><a href="#" th:href="@{/product}">Products</a></li>
-                <li th:classappend="${page == 'order' ? 'active' : ''}"><a href="#" th:href="@{/order}">Orders</a></li>
-                <li th:classappend="${page == 'customer' ? 'active' : ''}"><a href="#" th:href="@{/customer}">Customers</a></li>
-                <li th:classappend="${page == 'recommendation' ? 'active' : ''}"><a href="#" th:href="@{/recommend}">Recommendations</a></li>
-                <li th:classappend="${page == 'configuration' ? 'active' : ''}"><a href="#" th:href="@{/configuration}">Configuration</a></li>
-                <li th:classappend="${page == 'reports' ? 'active' : ''}"><a href="#" th:href="@{/reports}">Reports</a></li>
-                <li th:classappend="${page == 'help' ? 'active' : ''}"><a href="#" th:href="@{/help}">Help</a></li>
-            </ul>
-             <ul class="nav navbar-nav navbar-right">
+
+
+
+        <div class="navbar-collapse collapse" >
+            <form action="/searchAll" method="POST">
+            <div class="col-md-6">
+                <div class="input-group">
+
+                    <div class="input-group-btn">
+
+                        <button type="button" class="btn btn-default dropdown-toggle btn-srch-sel" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">All <span class="caret"></span></button>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Product</a></li>
+                            <li><a href="#">Orders</a></li>
+                            <li><a href="#">Customers</a></li>
+                            <li><a href="#">Recommendations</a></li>
+                            <li><a href="#">Configuration</a></li>
+                        </ul>
+                    </div><!-- /btn-group -->
+                    <input type="text" name="search" id="search" th:value="${search}" class="form-control" aria-label="Search.." placeholder="Search.." />
+
+                </div><!-- /input-group -->
+
+            </div>
+            </form>
+
+
+
+            <ul class="nav navbar-nav navbar-right">
                 <li class="dropdown clearfix-col-3">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Welcome Bhartendu <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a th:href="@{/account}">Profile</a></li>
-            <li><a th:href="@{/logout}">Logout</a></li>
-          </ul>
-        </li>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Welcome Bhartendu <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Profile</a></li>
+                        <li><a href="#">Logout</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Scuticommerce test</a></li>
             </ul>
         </div>
         <!--/.nav-collapse -->
     </div>
+</div>
+
+<!-- navbar bottom -->
+
+<div class="navbar navbar-inverse">
+    <div class="container">
+        <ul class="nav navbar-nav">
+            <li th:classappend="${page == 'home' ? 'active' : ''}"><a href="#" th:href="@{/}">Home</a></li>
+            <li th:classappend="${page == 'product' ? 'active' : ''}"><a href="#" th:href="@{/product}">Products</a></li>
+            <li th:classappend="${page == 'order' ? 'active' : ''}"><a href="#" th:href="@{/order}">Orders</a></li>
+            <li th:classappend="${page == 'customer' ? 'active' : ''}"><a href="#" th:href="@{/customer}">Customers</a></li>
+            <li th:classappend="${page == 'recommendation' ? 'active' : ''}"><a href="#" th:href="@{/recommend}">Recommendations</a></li>
+            <li th:classappend="${page == 'configuration' ? 'active' : ''}"><a href="#" th:href="@{/configuration}">Configuration</a></li>
+            <li th:classappend="${page == 'configuration' ? 'active' : ''}"><a href="#" th:href="@{/configuration}">Reports</a></li>
+            <li th:classappend="${page == 'configuration' ? 'active' : ''}"><a href="#" th:href="@{/configuration}">Help</a></li>
+        </ul>
+    </div>
+    <!-- navbar bottom -->
 </div>
 </body>
 </html>
