@@ -7,6 +7,7 @@
     <script type="text/javascript">
         google.charts.load('current', {'packages':['corechart']});
         google.charts.setOnLoadCallback(drawChart);
+        google.charts.setOnLoadCallback(drawUserChart);
 
         function drawChart() {
             var data = new google.visualization.DataTable();
@@ -27,9 +28,33 @@
             var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
             chart.draw(data, options);
         }
+
+        function drawUserChart() {
+            var data = new google.visualization.DataTable();
+            data.addColumn('string', 'user');
+            data.addColumn('number', 'types');
+            data.addRows([
+                ['GUEST', 3],
+                ['REGISTER', 3],
+                ['SOCIAL', 2]
+            ]);
+
+            var options = {'title':'User Type',
+                'width':600,
+                'height':400};
+            var chart = new google.visualization.PieChart(document.getElementById('chart_user'));
+            chart.draw(data, options);
+        }
+
     </script>
 <body>
-<div id="chart_div"></div>
+<table class="columns">
+    <tr>
+        <td><div id="chart_div"></div></td>
+        <td><div id="chart_user"></div></td>
+    </tr>
+</table>
+
 </body>
 <div th:include="footer :: footer"></div>
 </html>
