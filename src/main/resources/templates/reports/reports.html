@@ -1,8 +1,35 @@
 <html>
 <head th:include="header :: header">
 </head>
+
+    <!--Load the AJAX API-->
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+        google.charts.load('current', {'packages':['corechart']});
+        google.charts.setOnLoadCallback(drawChart);
+
+        function drawChart() {
+            var data = new google.visualization.DataTable();
+            data.addColumn('string', 'payment');
+            data.addColumn('number', 'types');
+            data.addRows([
+                ['VISA', 3],
+                ['AMAZON', 3],
+                ['PAYPAL', 2],
+                ['DISCOVER', 1],
+                ['AMERICANEXPRESS', 1],
+                ['MASTERCARD', 1]
+            ]);
+
+            var options = {'title':'Payment Type',
+                'width':600,
+                'height':400};
+            var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+            chart.draw(data, options);
+        }
+    </script>
 <body>
-REPORTS NEW
+<div id="chart_div"></div>
 </body>
 <div th:include="footer :: footer"></div>
 </html>
