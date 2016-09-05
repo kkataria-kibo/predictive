@@ -1,7 +1,7 @@
 body {    
-    background-color: #f5f5f5;
-    background:url("../images/bg.jpg") no-repeat bottom center fixed;
-    background-size: cover; 
+    background-color: #efefef;
+    font-size: 13px;
+    padding-top:150px;
 }
 .navbar{
     border-radius: 0 !important;
@@ -60,11 +60,14 @@ body {
   }
 .navbar-inverse{
     border-radius:0px;
+    border-top:#777 solid 2px;
 }
 
 #search{
     background-color: rgba(255,255,255, 0.2);
     border: rgba(255,255,255, 0.2) solid 1px;
+    color: #ffffff;
+    opacity:0.8;
 }
 .btn-srch-sel{
     background: rgba(255,255,255,0.6);
@@ -72,4 +75,73 @@ body {
 }
 .navbar-right li a{
     padding-top:0;
+}
+.nav-tp{
+    margin-bottom:0px;
+    padding:5px 0;
+    border-bottom:#777 solid 1px;
+}
+.nav-btm{
+    z-index:9;
+    top:75px;
+}
+.dropdown-menu{
+    background: #222;
+    border: rgba(255,255,255, 0.2) solid 1px;
+    font-size:13px;
+    color:#fff;
+    opacity:0.8;
+}
+.navbar-nav>li>.dropdown-menu{
+    background: #222;
+    border: rgba(255,255,255, 0.2) solid 1px;
+}
+.navbar-inverse .navbar-nav>.open>a{
+    background:transparent;
+}
+.dropdown-menu>li>a{
+    color:#fff;
+    opacity:0.8;
+}
+.tp-mn-srch{
+    margin-top:15px;
+}
+.nv-rt{
+    margin-top:10px;
+    font-size:13px;
+}
+table{
+    font-size:13px;
+}
+.btn{
+    font-size:13px;
+}
+table thead{
+    background: #cccccc;
+}
+.ad-prd-btn{
+    margin-bottom:20px;
+}
+#product{
+    margin-top:10px;
+}
+.btn-primary{
+    background-color:#efb030;
+    border-color:#f9c04d;
+    color: #444;
+    border-top: #efb030 solid 2px;
+}
+.pagination>.active>a, .pagination>.active>span, .pagination>.active>a:hover, .pagination>.active>span:hover, .pagination>.active>a:focus, .pagination>.active>span:focus{
+    background-color:#efb030;
+    border-color:#f9c04d;
+}
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open .dropdown-toggle.btn-primary{
+    background-color: #e8b346;
+}
+.dropdown-menu>li>a:hover, .dropdown-menu>li>a:focus{
+     background-color: #e8b346;
+}
+.navbar-inverse .navbar-nav>li>a:hover, .navbar-inverse .navbar-nav>li>a:focus{
+    opacity:0.7;
+    border-top: #e8b346 solid 2px;
 }
