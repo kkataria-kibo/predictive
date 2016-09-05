@@ -55,6 +55,34 @@
     </tr>
 </table>
 
+
+<h2>Report for Orders </h2>
+<form action="/reports/orderCount" method="POST">
+    <input type="submit" value="Run Report" />
+</form>
+
+<tbody>
+<tr th:each="report : ${reportList}">
+    <td th:text="${report.orderID}"></td>
+    <td th:text="${report.count}"></td>
+</tr>
+</tbody>
+
+
+
+<h2>Report for Customers </h2>
+<form action="/reports/customerStatusCount" method="POST">
+    <input type="submit" value="Run Report" />
+</form>
+
+<tbody>
+<tr th:each="reportCustomer : ${reportCustomerList}">
+    <td th:text="${reportCustomer.status}"></td>
+    <td th:text="${reportCustomer.count}"></td>
+</tr>
+</tbody>
+
+
 </body>
 <div th:include="footer :: footer"></div>
 </html>

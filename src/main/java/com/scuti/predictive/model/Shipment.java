@@ -5,6 +5,9 @@ package com.scuti.predictive.model;
  */
 public class Shipment {
 
+    public Shipment() {
+    }
+
     private String name;
     private String state;
     private String city;

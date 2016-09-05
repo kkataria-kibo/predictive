@@ -8,6 +8,8 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Document(collection = "Customer")
 public class Customer {
 
+
+
     private String firstName;
     private String lastName;
     private String prefix;

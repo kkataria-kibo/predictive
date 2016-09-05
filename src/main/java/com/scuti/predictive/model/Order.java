@@ -52,6 +52,9 @@ public class Order {
     private Customer customer;
     private String orderDiscount;
 
+    public Order() {
+    }
+
     public String getTax() {
         return tax;
     }

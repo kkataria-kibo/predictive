@@ -1,17 +1,19 @@
 package com.scuti.predictive.repository;
 
-import com.scuti.predictive.model.Customer;
-import com.scuti.predictive.model.Product;
-import com.scuti.predictive.model.ScutiConfiguration;
+import com.scuti.predictive.model.*;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.data.mongodb.core.MongoTemplate;
+import org.springframework.data.mongodb.core.aggregation.Aggregation;
+import org.springframework.data.mongodb.core.aggregation.AggregationOperation;
+import org.springframework.data.mongodb.core.aggregation.AggregationResults;
 import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.stereotype.Repository;
 
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
+
+import static org.springframework.data.mongodb.core.aggregation.Aggregation.*;
 
 @Repository
 public class SearchRepository {
@@ -89,6 +91,35 @@ public class SearchRepository {
 		return mongoTemplate.find(Query.query(new Criteria()
 				.orOperator(Criteria.where("organization").regex(text, "i"))
 		), ScutiConfiguration.class);
+	}
+
+
+
+	public List<SalesReport> getOrderCount() {
+		Aggregation agg = newAggregation(Order.class,
+				group("orderID").count().as("count"),
+				project("count").and("orderID").previousOperation(),
+				sort(Sort.Direction.DESC, "count")
+
+		);
+		AggregationResults<SalesReport> groupResults
+				= mongoTemplate.aggregate(agg, Order.class, SalesReport.class);
+		List<SalesReport> result = groupResults.getMappedResults();
+		return result;
+	}
+
+	public List<CustomerReport> getCustomerStatusGroup() {
+
+		Aggregation agg = newAggregation(Customer.class,
+				group("status").count().as("count"),
+				project("count").and("status").previousOperation(),
+				sort(Sort.Direction.DESC, "count")
+
+		);
+		AggregationResults<CustomerReport> groupResults
+				= mongoTemplate.aggregate(agg, Customer.class, CustomerReport.class);
+		List<CustomerReport> result = groupResults.getMappedResults();
+		return result;
 	}
 	
 }
