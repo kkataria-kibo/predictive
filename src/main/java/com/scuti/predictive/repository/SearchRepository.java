@@ -121,5 +121,5 @@ public class SearchRepository {
 		List<CustomerReport> result = groupResults.getMappedResults();
 		return result;
 	}
-	
+
 }

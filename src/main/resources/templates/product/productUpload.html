@@ -1,0 +1,79 @@
+<html>
+<head th:include="header :: header">
+
+	</head>
+	<body>
+	<script type="text/javascript">
+
+		$(document).ready(function() {
+		$('#product').DataTable();
+		} );
+
+	</script>
+	<script>
+
+		function submitUpload() {
+			var data = new FormData($('#uploader')[0]);
+			clearSubtitle();
+
+			if(!$('#file').val()) {
+				$('#sub-title-wrapper').html("Please select a file.");
+				return false;
+			}
+
+			jQuery.ajax('file/uploadProducts', {
+				processData: false,
+				contentType: false,
+				data:  new FormData($('#uploader')[0]),
+				method: "POST",
+				complete: function(data) {
+
+					if(data.responseJSON != 'undefined') {
+
+						var success = data.responseJSON.properties['success'];
+						var failed = data.responseJSON.properties['failure'];
+
+						if (failed == 'failure' ){
+							$('#failed-list').html("Failed Product Import");
+						}
+						$('#sub-title-wrapper').html("Import Success ");
+						$('#uploader').get(0).reset();
+						location.reload();
+
+					}
+				}
+			});
+		}
+		function clearSubtitle() {
+			$('#sub-title-wrapper').html("");
+			$('#failed-list').html("");
+		}
+	</script>
+	<div class="container">
+
+		<h2>Upload Products </h2>
+		<form id="uploader" action="#">
+			<input type="file" name="file" id="file"/>
+			<button class="button" onclick="submitUpload();return false;">Upload</button>
+		</form>
+
+		<div id="sub-title-wrapper"></div>
+		<div id="failed-list" class="error"></div>
+
+		<h2>Schedule Product Upload </h2>
+
+		<div>SFTP/FTP: SFTP <input type="radio" name="sftp" id="sftp"/>
+			FTP <input type="radio" name="ftp" id="ftp"/>
+		</div>
+		<div>HOST:  <input type="text" name="host" id="host"/> </div>
+		<div>Username:  <input type="text" name="username" id="username"/> </div>
+		<div>Password:  <input type="text" name="password" id="password"/> </div>
+
+
+	</div>
+
+
+
+	</body>
+<div th:include="footer :: footer" class="copy"></div>
+</html>

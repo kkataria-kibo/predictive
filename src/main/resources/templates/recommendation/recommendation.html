@@ -3,6 +3,45 @@
 </head>
 <body>
 
+<div class="container">
+
+    <h2>Configure Recommendation Display </h2>
+
+    <div>No of Product: <select>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+    </select>
+    </div>
+    <div>Enable Link: Yes <input type="radio" name="yes" id="yes"/>
+        No <input type="radio" name="no" id="no"/></div>
+    <div>Aligment: <select>
+        <option value="horizontal">Horizontal</option>
+        <option value="vertical">Vertical</option>
+        <option value="custom">User Defined</option>
+    </select>
+    </div>
+    <div>Product Attributes:
+
+
+        <select class="form-control" id="attributes" name="attributes" multiple="multiple" >
+            <option value="name">Name</option>
+            <option value="description">Description</option>
+            <option value="price">Price</option>
+            <option value="saleprice">Sale Price</option>
+            <option value="discount">Discount Message</option>
+            <option value="promo">Promo Message</option>
+        </select>
+
+    </div>
+
+</div>
+
+
+
 </body>
 <div th:include="footer :: footer"></div>
 </html>

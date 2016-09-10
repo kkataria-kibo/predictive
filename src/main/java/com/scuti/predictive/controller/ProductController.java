@@ -22,6 +22,12 @@ public class ProductController {
 		model.addAttribute("productList", productRepository.findAll());
 		return "/product/product";
 	}
+
+	@RequestMapping("/productUpload")
+	public String productUpload(Model model) {
+
+		return "/product/productUpload";
+	}
 	
 	@RequestMapping(value = "/addProduct", method = RequestMethod.POST)
 	public String addProduct(@ModelAttribute Product product) {

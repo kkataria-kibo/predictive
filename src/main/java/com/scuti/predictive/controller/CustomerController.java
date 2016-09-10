@@ -24,6 +24,13 @@ public class CustomerController {
         return "/customer/customer";
     }
 
+    @RequestMapping("/customerUpload")
+    public String customerUpload(Model model) {
+
+        return "/customer/customerUpload";
+    }
+
+
     @RequestMapping(value = "/addCustomer", method = RequestMethod.POST)
     public String addConfiguration(@ModelAttribute Customer customer) {
 

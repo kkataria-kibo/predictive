@@ -22,4 +22,11 @@ public class OrderController {
         return "/orders/order";
     }
 
+
+    @RequestMapping("/orderUpload")
+    public String orderUpload(Model model) {
+
+        return "/orders/orderUpload";
+    }
+
 }
