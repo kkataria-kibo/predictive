@@ -39,8 +39,15 @@ public class FileUploadController {
         try {
             File realFile = File.createTempFile("fileUpload", "csv");
             realFile.deleteOnExit();
+
             file.transferTo(realFile);
-            parser = CSVParser.parse(realFile, Charset.forName(StandardCharsets.UTF_8.name()), CSVFormat.DEFAULT.withHeader());
+            if (fileName.contains("tsv")) {
+
+                parser = CSVParser.parse(realFile, Charset.forName(StandardCharsets.UTF_8.name()), CSVFormat.newFormat('\t').withHeader());
+            }else {
+                parser = CSVParser.parse(realFile, Charset.forName(StandardCharsets.UTF_8.name()), CSVFormat.DEFAULT.withHeader());
+            }
+
         }
         catch(IOException e) {
             log.error(e.getMessage(), e);

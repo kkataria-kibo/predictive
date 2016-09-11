@@ -36,22 +36,46 @@ public class ImportUtil {
 
         for (CSVRecord line : parser) {
             lineNumber++;
-            String code = StringUtils.trim(line.get("CODE"));
-            String name = StringUtils.trim(line.get("NAME"));
-            String description = StringUtils.trim(line.get("DESCRIPTION"));
+            //String code = StringUtils.trim(line.get("CODE"));
+            String name = StringUtils.trim(line.get("title"));
+            String description = StringUtils.trim(line.get("description"));
             String sku = StringUtils.trim(line.get("SKU"));
-            String imageurl = StringUtils.trim(line.get("IMAGEURL"));
-
-            log.debug("IMPORTING CSV FILE.... " + "code" + code + "name" + name);
-
+            String link = StringUtils.trim(line.get("link"));
+            String image = StringUtils.trim(line.get("image"));
+            String color = StringUtils.trim(line.get("color"));
+            String size = StringUtils.trim(line.get("size"));
+            String gender = StringUtils.trim(line.get("gender"));
+            String age = StringUtils.trim(line.get("age"));
+            String availability = StringUtils.trim(line.get("availability"));
+            String upc = StringUtils.trim(line.get("UPC"));
+            String price = StringUtils.trim(line.get("price"));
+            String sale_price = StringUtils.trim(line.get("sale price"));
+            String parent_id = StringUtils.trim(line.get("parent id"));
+            String brand = StringUtils.trim(line.get("brand"));
+            String shipping = StringUtils.trim(line.get("shipping"));
+            String category = StringUtils.trim(line.get("category"));
+            String google_category = StringUtils.trim(line.get("google category"));
+            String MPN = StringUtils.trim(line.get("MPN"));
+            //SKU	title	description	link	image	color	size	gender	age	availability	UPC	price	sale price
+            // parent id	brand	shipping	category	google category	MPN
             Product product = new Product();
-
-
-            product.setCode(code);
+            product.setColor(color);
+            product.setSize(size);
+            product.setGender(gender);
+            product.setAge(age);
+            product.setAvailability(availability);
+            product.setUpc(upc);
+            product.setPrice(price);
+            product.setSale_price(sale_price);
+            product.setCode(parent_id);
             product.setName(name);
             product.setDescription(description);
             product.setSku(sku);
-            product.setImageURL(imageurl);
+            product.setImageURL(image);
+            product.setBrand(brand);
+            product.setMpn(MPN);
+            product.setCategory(category);
+            product.setUrl(link);
 
             products.add(product);
 

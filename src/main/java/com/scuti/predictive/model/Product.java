@@ -1,6 +1,7 @@
 package com.scuti.predictive.model;
 
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -38,6 +39,78 @@ public class Product {
 	private String review;
 	private String url;
 
+	public String getColor() {
+		return color;
+	}
+
+	public void setColor(String color) {
+		this.color = color;
+	}
+
+	public String getSize() {
+		return size;
+	}
+
+	public void setSize(String size) {
+		this.size = size;
+	}
+
+	public String getGender() {
+		return gender;
+	}
+
+	public void setGender(String gender) {
+		this.gender = gender;
+	}
+
+	public String getAge() {
+		return age;
+	}
+
+	public void setAge(String age) {
+		this.age = age;
+	}
+
+	public String getAvailability() {
+		return availability;
+	}
+
+	public void setAvailability(String availability) {
+		this.availability = availability;
+	}
+
+	public String getUpc() {
+		return upc;
+	}
+
+	public void setUpc(String upc) {
+		this.upc = upc;
+	}
+
+	public String getPrice() {
+		return price;
+	}
+
+	public void setPrice(String price) {
+		this.price = price;
+	}
+
+	public String getSale_price() {
+		return sale_price;
+	}
+
+	public void setSale_price(String sale_price) {
+		this.sale_price = sale_price;
+	}
+
+	private String color;
+	private String size;
+	private String gender;
+	private String age;
+	private String availability;
+	private String upc;
+	private String price;
+	private String sale_price;
 
 	public String getId() {
 		return id;
