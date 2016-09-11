@@ -22,6 +22,13 @@
     } );
 
 } );</script>
+<div class="container">
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary pull-right ad-prd-btn" data-toggle="modal" data-target="#myModal">Add product</button>
+    <div>&nbsp;</div>
+    <div class="clearfix"></div>
+
+
 <table id="configuration" class="table table-striped table-bordered">
     <thead>
     <tr>
@@ -43,15 +50,45 @@
     </tr>
     </tbody>
 </table>
-<br />
-<h2>Add Configuration</h2>
-<form action="/addConfig" method="POST">
-    Property Name <input type="text" id="property" name="property" /><br />
-    Value <input type="text" id="value" name="value" /><br />
-    Type <input type="text" id="type" name="type" /><br />
-    Organization <input type="text" id="organization" name="organization" /><br />
-    <input type="submit" />
-</form>
+
+    </div>
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Add Configuration </h4>
+            </div>
+            <div class="modal-body">
+
+
+                <form action="/addConfig" method="POST">
+                    <div class="form-group">
+                        <input type="text" id="property" name="property"  class="form-control" placeholder="Propety Name" />
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="value" name="value" class="form-control" placeholder="Value" />
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="type" name="type" class="form-control" placeholder="Type" />
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="organization" name="organization" class="form-control" placeholder="Organization" />
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" class="btn btn-primary" value="Submit" />
+                    </div>
+                </form>
+
+
+            </div>
+        </div>
+    </div>
+</div>
 </body>
-<div th:include="footer :: footer"></div>
+<div th:include="footer :: footer" class="copy-oth"></div>
 </html>
