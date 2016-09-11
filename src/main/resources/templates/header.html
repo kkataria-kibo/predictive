@@ -35,7 +35,7 @@
         <div class="navbar-collapse collapse" >
             <form action="/searchAll" method="POST" class="tp-mn-srch">
             <div class="col-md-6">
-                <div class="input-group">
+                <div class="input-group inp-grp">
 
                     <div class="input-group-btn">
 
@@ -81,17 +81,13 @@
             <li th:classappend="${page == 'product' ? 'active' : ''}"><a href="#" th:href="@{/product}">Products</a>
                 <ul>
                   <li><a href="#" th:href="@{/productUpload}">Upload Product</a></li>
+                    <li><a href="#" th:href="@{/orderUpload}">Upload Orders</a></li>
+                    <li><a href="#" th:href="@{/customerUpload}">Upload Customer</a></li>
                 </ul>
             </li>
             <li th:classappend="${page == 'order' ? 'active' : ''}"><a href="#" th:href="@{/order}">Orders</a>
-                <ul>
-                    <li><a href="#" th:href="@{/orderUpload}">Upload Orders</a></li>
-                </ul>
             </li>
             <li th:classappend="${page == 'customer' ? 'active' : ''}"><a href="#" th:href="@{/customer}">Customers</a>
-                <ul>
-                    <li><a href="#" th:href="@{/customerUpload}">Upload Customer</a></li>
-                </ul>
             </li>
             <li th:classappend="${page == 'recommendation' ? 'active' : ''}"><a href="#" th:href="@{/recommend}">Recommendations</a></li>
             <li th:classappend="${page == 'configuration' ? 'active' : ''}"><a href="#" th:href="@{/configuration}">Configuration</a></li>

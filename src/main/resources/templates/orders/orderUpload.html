@@ -50,30 +50,58 @@
 		}
 	</script>
 	<div class="container">
-
-		<h2>Upload Orders </h2>
+		<div class="form-horizontal cong-frm">
+		<h3>Upload Orders </h3>
+			<div class="cong-frm-in">
 		<form id="uploader" action="#">
 			<input type="file" name="file" id="file"/>
 			<button class="button" onclick="submitUpload();return false;">Upload</button>
 		</form>
-
+				</div>
+</div>
 		<div id="sub-title-wrapper"></div>
 		<div id="failed-list" class="error"></div>
 
-		<h2>Schedule Order Upload </h2>
+		<div class="form-horizontal cong-frm">
+			<h3>Schedule Order Upload </h3>
+			<div class="cong-frm-in">
+			<div class="form-group">
+				<label  class="col-sm-2 control-label">SFTP/FTP:</label>
+				<div class="col-sm-10">
+					SFTP <input type="radio" name="sftp" id="sftp"/>
+					FTP <input type="radio" name="sftp" id="ftp"/>
+				</div>
+			</div>
 
-		<div>SFTP/FTP: SFTP <input type="radio" name="sftp" id="sftp"/>
-			FTP <input type="radio" name="ftp" id="ftp"/>
+
+			<div class="form-group">
+				<label for="host" class="col-sm-2 control-label">HOST:</label>
+				<div class="col-sm-10">
+					<input type="text" class="form-control" name="host" id="host" placeholder="Host" />
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label for="username" class="col-sm-2 control-label">Username :</label>
+				<div class="col-sm-10">
+					<input type="text" class="form-control" name="username" id="username" placeholder="Username" />
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label for="username" class="col-sm-2 control-label">Password :</label>
+				<div class="col-sm-10">
+					<input type="text" class="form-control" name="password" id="password" placeholder="Password" />
+				</div>
+			</div>
+</div>
+
+
 		</div>
-		<div>HOST:  <input type="text" name="host" id="host"/> </div>
-		<div>Username:  <input type="text" name="username" id="username"/> </div>
-		<div>Password:  <input type="text" name="password" id="password"/> </div>
-
-
 	</div>
 
 
 
 	</body>
-<div th:include="footer :: footer" class="copy"></div>
+<div th:include="footer :: footer" class="copy-oth"></div>
 </html>
