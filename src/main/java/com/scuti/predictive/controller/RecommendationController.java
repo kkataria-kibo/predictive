@@ -16,4 +16,9 @@ public class RecommendationController {
         return "/recommendation/recommendation";
     }
 
+    @RequestMapping("/recommendationPreview")
+    public String recommendationPreview(Model model) {
+        return "/recommendation/recommendationPreview";
+    }
+
 }

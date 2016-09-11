@@ -61,11 +61,11 @@
                 <li class="dropdown clearfix-col-3">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Welcome Bhartendu <span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="#">Profile</a></li>
-                        <li><a href="#">Logout</a></li>
+                        <li><a href="/account">Profile</a></li>
+                        <li><a href="/logout">Logout</a></li>
                     </ul>
                 </li>
-                <li><a href="#">Scuticommerce test</a></li>
+                <li><a href="#">Scuticommerce</a></li>
             </ul>
         </div>
         <!--/.nav-collapse -->
@@ -89,7 +89,11 @@
             </li>
             <li th:classappend="${page == 'customer' ? 'active' : ''}"><a href="#" th:href="@{/customer}">Customers</a>
             </li>
-            <li th:classappend="${page == 'recommendation' ? 'active' : ''}"><a href="#" th:href="@{/recommend}">Recommendations</a></li>
+            <li th:classappend="${page == 'recommendation' ? 'active' : ''}"><a href="#" th:href="@{/recommend}">Recommendations</a>
+                <ul>
+                    <li><a href="#" th:href="@{/recommendationPreview}">Recommendation Preview</a></li>
+                </ul>
+            </li>
             <li th:classappend="${page == 'configuration' ? 'active' : ''}"><a href="#" th:href="@{/configuration}">Configuration</a></li>
             <li th:classappend="${page == 'reports' ? 'active' : ''}"><a href="#" th:href="@{/reports}">Reports</a></li>
             <li th:classappend="${page == 'help' ? 'active' : ''}"><a href="#" th:href="@{/help}">Help</a></li>
