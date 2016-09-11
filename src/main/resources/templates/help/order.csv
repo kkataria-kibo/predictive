@@ -1,0 +1,2 @@
+OrderID,OrderDate,FirstName,LastName,ShipState,ShipCity,ShipPostalCode,Item,ProductName,Qty,PriceEach,ItemDiscount,TotalPrice,MerchandiseTotal,OrderDiscount,Shipping,DiscountedShipping,Tax,TotalInvoiced,CouponCode,PaymentMethod
+ORDER_SC_103007,2016-06-19T11:50:25.653-07:00,Scuticommerce,scuticommerce,CA,rohnert park,94928,PROD5678,Test product,1,54.00,0.00,54.00,54.00,8.10,7.00,0.00,0.00,52.90,SAVESHIPPING,VI

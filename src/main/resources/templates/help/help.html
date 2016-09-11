@@ -2,22 +2,35 @@
 <head th:include="header :: header">
 </head>
 <body>
-HELP
+<div class="container">
+<h1>HELP</h1>
 
-Uploading a product File
+<h3>Uploading a product File</h3>
 
-Sample Format
-
+<h4>Sample Format csv</h4>
 CODE,NAME,DESCRIPTION,SKU,IMAGEURL
-productcode,productname,productdescription,skucode,imageurl
+{productcode},{productname},{productdescription},{skucode},{imageurl}
+
+<h4>Sample File</h4>
+CODE,NAME,DESCRIPTION,SKU,IMAGEURL
+ABCD,Test product,test product description,PROD1234,product1_image.img
+YXYZ,Test product,test product description,PROD5678,product2_image.img
+
+Download Sample Product File click <a href="/help/product.csv">here</a>
 
 
-Order Import Sample
+<h3>Order Import Sample</h3>
 
+<h4>Sample Format CSV</h4>
 OrderID,OrderDate,FirstName,LastName,ShipState,ShipCity,ShipPostalCode,Item,ProductName,Qty,PriceEach,ItemDiscount,TotalPrice,MerchandiseTotal,OrderDiscount,Shipping,DiscountedShipping,Tax,TotalInvoiced,CouponCode,PaymentMethod
+{orderid},{orderdate},{firstname},{lastname},{shipstate},{shipcity},{postalcode},{item},{productname},{qty},{price},{itemdiscount},{total},{merchandisetotal},{orderdiscount},{shipping},{discountedshipping},{tax},{invoice},{coupouncode},{paymentmethod}
 
+<h4>Sample File</h4>
+OrderID,OrderDate,FirstName,LastName,ShipState,ShipCity,ShipPostalCode,Item,ProductName,Qty,PriceEach,ItemDiscount,TotalPrice,MerchandiseTotal,OrderDiscount,Shipping,DiscountedShipping,Tax,TotalInvoiced,CouponCode,PaymentMethod
+ORDER_SC_103007,2016-06-19T11:50:25.653-07:00,Scuticommerce,scuticommerce,CA,rohnert park,94928,PROD5678,Test product,1,54.00,0.00,54.00,54.00,8.10,7.00,0.00,0.00,52.90,SAVESHIPPING,VI
 
-
+Download Sample Order File click <a href="/help/order.csv">here</a>
+</div>
 </body>
 <div th:include="footer :: footer" class="copy-oth"></div>
 </html>
