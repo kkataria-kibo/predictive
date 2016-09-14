@@ -4,9 +4,9 @@
 <head>
     <title>Predictive Intelligence by ScutiConnect</title>
     <link href="/css/bootstrap.min.css" rel="stylesheet" media="screen" th:href="@{/css/bootstrap.min.css}"/>
+    <link href="/css/jquery.bxslider.css" rel="stylesheet" media="screen" th:href="@{/css/jquery.bxslider.css}"/>
     <link href="/css/core.css" rel="stylesheet" media="screen" th:href="@{/css/core.css}"/>
-
-
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.0/themes/base/jquery-ui.css" />
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"/>
     <link href="https://cdn.datatables.net/1.10.12/css/dataTables.bootstrap.min.css"/>
 
@@ -15,7 +15,61 @@
     <script src="//code.jquery.com/jquery-1.12.3.js"></script>
     <script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.10.12/js/dataTables.bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
+    <script src="/js/jquery.bxslider.min.js"></script>
 
+    <script>
+    $( function() {
+    var availableTags = [
+    "ActionScript",
+    "AppleScript",
+    "Asp",
+    "BASIC",
+    "C",
+    "C++",
+    "Clojure",
+    "COBOL",
+    "ColdFusion",
+    "Erlang",
+    "Fortran",
+    "Groovy",
+    "Haskell",
+    "Java",
+    "JavaScript",
+    "Lisp",
+    "Perl",
+    "PHP",
+    "Python",
+    "Ruby",
+    "Scala",
+    "Scheme"
+    ];
+    $( "#tags" ).autocomplete({
+    source: availableTags
+    });
+    } );
+    </script>
+
+    <!--  carousal -->
+    <script>
+    $(document).ready(function(){
+    $('.slider8').bxSlider({
+    mode: 'vertical',
+    slideWidth: 300,
+    minSlides: 2,
+    slideMargin: 10
+    });
+    });
+
+    $(document).ready(function(){
+        $('.slider1').bxSlider({
+            slideWidth: 200,
+            minSlides: 2,
+            maxSlides: 3,
+            slideMargin: 10
+        });
+    });
+    </script>
 </head>
 <body>
 <!-- Navbar -->
@@ -48,7 +102,7 @@
                             <li><a href="#">Configuration</a></li>
                         </ul>
                     </div><!-- /btn-group -->
-                    <input type="text" name="search" id="search" th:value="${search}" class="form-control" aria-label="Search.." placeholder="Search.." />
+                    <input type="text" name="search" id="tags" th:value="${search}" class="form-control" aria-label="Search.." placeholder="Search.." />
 
                 </div><!-- /input-group -->
 
