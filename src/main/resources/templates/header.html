@@ -88,10 +88,18 @@
             <li th:classappend="${page == 'order' ? 'active' : ''}"><a href="#" th:href="@{/order}">Orders</a>
             </li>
             <li th:classappend="${page == 'customer' ? 'active' : ''}"><a href="#" th:href="@{/customer}">Customers</a>
+                <ul>
+                    <li><a href="#" th:href="@{/dashboard}">Dashboard</a></li>
+                </ul>
             </li>
             <li th:classappend="${page == 'recommendation' ? 'active' : ''}"><a href="#" th:href="@{/recommend}">Recommendations</a>
                 <ul>
                     <li><a href="#" th:href="@{/recommendationPreview}">Recommendation Preview</a></li>
+                </ul>
+            </li>
+            <li th:classappend="${page == 'email' ? 'active' : ''}"><a href="#" th:href="@{/email}">Email</a>
+                <ul>
+                    <li><a href="#" th:href="@{/templates}">Template</a></li>
                 </ul>
             </li>
             <li th:classappend="${page == 'configuration' ? 'active' : ''}"><a href="#" th:href="@{/configuration}">Configuration</a></li>

@@ -38,6 +38,14 @@ public class Product {
 	private String purchaseDate;
 	private String review;
 	private String url;
+	private String color;
+	private String size;
+	private String gender;
+	private String age;
+	private String availability;
+	private String upc;
+	private String price;
+	private String sale_price;
 
 	public String getColor() {
 		return color;
@@ -103,14 +111,7 @@ public class Product {
 		this.sale_price = sale_price;
 	}
 
-	private String color;
-	private String size;
-	private String gender;
-	private String age;
-	private String availability;
-	private String upc;
-	private String price;
-	private String sale_price;
+
 
 	public String getId() {
 		return id;
