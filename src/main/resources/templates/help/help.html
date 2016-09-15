@@ -5,31 +5,86 @@
 <div class="container">
 <h1>HELP</h1>
 
+    <div class="hlp-sec">
 <h3>Uploading a product File</h3>
 
+<div class="hlp-sec-in">
 <h4>Sample Format csv</h4>
-CODE,NAME,DESCRIPTION,SKU,IMAGEURL
-{productcode},{productname},{productdescription},{skucode},{imageurl}
+
+    <table class="table table-bordered">
+        <thead>
+        <tr> <th>CODE</th> <th>Name</th> <th>Description</th> <th>SKU</th><th>IMAGEURL</th> </tr>
+        </thead>
+        <tbody>
+        <tr> <th scope="row">productcode</th> <td>productname</td> <td>productdescription</td> <td>skucode</td> <td>imageurl</td></tr>
+        </tbody>
+    </table>
+
 
 <h4>Sample File</h4>
-CODE,NAME,DESCRIPTION,SKU,IMAGEURL
-ABCD,Test product,test product description,PROD1234,product1_image.img
-YXYZ,Test product,test product description,PROD5678,product2_image.img
+    <table class="table table-bordered">
+        <thead>
+        <tr> <th>CODE</th> <th>Name</th> <th>Description</th> <th>SKU</th><th>IMAGEURL</th> </tr>
+        </thead>
+        <tbody>
+        <tr> <th scope="row">productcode</th> <td>productname</td> <td>productdescription</td> <td>skucode</td> <td>imageurl</td></tr>
+        <tr> <th scope="row">productcode</th> <td>productname</td> <td>productdescription</td> <td>skucode</td> <td>imageurl</td></tr>
+        <tr> <th scope="row">productcode</th> <td>productname</td> <td>productdescription</td> <td>skucode</td> <td>imageurl</td></tr>
+        <tr> <th scope="row">productcode</th> <td>productname</td> <td>productdescription</td> <td>skucode</td> <td>imageurl</td></tr>
+        <tr> <th scope="row">productcode</th> <td>productname</td> <td>productdescription</td> <td>skucode</td> <td>imageurl</td></tr>
+        </tbody>
+    </table>
 
 Download Sample Product File click <a href="/help/product.csv">here</a>
+        </div>
+</div>
 
+    <div class="hlp-sec" style="overflow-x: scroll;">
 
 <h3>Order Import Sample</h3>
-
+        <div class="hlp-sec-in">
 <h4>Sample Format CSV</h4>
-OrderID,OrderDate,FirstName,LastName,ShipState,ShipCity,ShipPostalCode,Item,ProductName,Qty,PriceEach,ItemDiscount,TotalPrice,MerchandiseTotal,OrderDiscount,Shipping,DiscountedShipping,Tax,TotalInvoiced,CouponCode,PaymentMethod
-{orderid},{orderdate},{firstname},{lastname},{shipstate},{shipcity},{postalcode},{item},{productname},{qty},{price},{itemdiscount},{total},{merchandisetotal},{orderdiscount},{shipping},{discountedshipping},{tax},{invoice},{coupouncode},{paymentmethod}
+
+
+            <table class="table table-bordered">
+                <thead>
+                <tr> <th>OrderID</th> <th>OrderDate</th> <th>FirstName</th> <th>LastName</th><th>ShipState</th><th>ShipCity</th><th>ShipPostalCode</th><th>Item</th><th>ProductName</th><th>Qty</th>
+                    <th>PriceEach</th><th>ItemDiscount</th><th>TotalPrice</th><th>MerchandiseTotal</th><th>OrderDiscount</th><th>Shipping</th>
+                    <th>DiscountedShipping</th><th>Tax</th><th>TotalInvoiced</th><th>CouponCode</th><th>PaymentMethod</th> </tr>
+                </thead>
+                <tbody>
+                <tr> <td scope="row">1</td> <td>12/22/2016</td> <td>Bharat</td> <td>Sharma</td><td>Himachal</td><td>Mandi</td><td>175008</td><td>Item</td><td>ProductName</td><th>1</th>
+                    <td>210</td><td>50</td><td>500</td><td>510</td><td>241</td><td>41</td>
+                    <td>41</td><td>12.5%</td><td>5412</td><td>LKJH876</td><td>Paypal</td> </tr>
+
+                <tr> <td scope="row">1</td> <td>12/22/2016</td> <td>Bharat</td> <td>Sharma</td><td>Himachal</td><td>Mandi</td><td>175008</td><td>Item</td><td>ProductName</td><th>1</th>
+                    <td>210</td><td>50</td><td>500</td><td>510</td><td>241</td><td>41</td>
+                    <td>41</td><td>12.5%</td><td>5412</td><td>LKJH876</td><td>Paypal</td> </tr>
+                </tbody>
+            </table>
+
+
 
 <h4>Sample File</h4>
-OrderID,OrderDate,FirstName,LastName,ShipState,ShipCity,ShipPostalCode,Item,ProductName,Qty,PriceEach,ItemDiscount,TotalPrice,MerchandiseTotal,OrderDiscount,Shipping,DiscountedShipping,Tax,TotalInvoiced,CouponCode,PaymentMethod
-ORDER_SC_103007,2016-06-19T11:50:25.653-07:00,Scuticommerce,scuticommerce,CA,rohnert park,94928,PROD5678,Test product,1,54.00,0.00,54.00,54.00,8.10,7.00,0.00,0.00,52.90,SAVESHIPPING,VI
+            <table class="table table-bordered">
+                <thead>
+                <tr> <th>OrderID</th> <th>OrderDate</th> <th>FirstName</th> <th>LastName</th><th>ShipState</th><th>ShipCity</th><th>ShipPostalCode</th><th>Item</th><th>ProductName</th><th>Qty</th>
+                    <th>PriceEach</th><th>ItemDiscount</th><th>TotalPrice</th><th>MerchandiseTotal</th><th>OrderDiscount</th><th>Shipping</th>
+                    <th>DiscountedShipping</th><th>Tax</th><th>TotalInvoiced</th><th>CouponCode</th><th>PaymentMethod</th> </tr>
+                </thead>
+                <tbody>
+                <tr> <td scope="row">1</td> <td>12/22/2016</td> <td>Bharat</td> <td>Sharma</td><td>Himachal</td><td>Mandi</td><td>175008</td><td>Item</td><td>ProductName</td><th>1</th>
+                    <td>210</td><td>50</td><td>500</td><td>510</td><td>241</td><td>41</td>
+                    <td>41</td><td>12.5%</td><td>5412</td><td>LKJH876</td><td>Paypal</td> </tr>
 
+                <tr> <td scope="row">1</td> <td>12/22/2016</td> <td>Bharat</td> <td>Sharma</td><td>Himachal</td><td>Mandi</td><td>175008</td><td>Item</td><td>ProductName</td><th>1</th>
+                    <td>210</td><td>50</td><td>500</td><td>510</td><td>241</td><td>41</td>
+                    <td>41</td><td>12.5%</td><td>5412</td><td>LKJH876</td><td>Paypal</td> </tr>
+                </tbody>
+            </table>
 Download Sample Order File click <a href="/help/order.csv">here</a>
+            </div>
+    </div>
 </div>
 </body>
 <div th:include="footer :: footer" class="copy-oth"></div>

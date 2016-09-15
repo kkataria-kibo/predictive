@@ -229,3 +229,21 @@ table thead{
 .cong-frm-in .control-label{
     text-align:left;
 }
+
+/*  help page */
+.hlp-sec {
+    border: #bcbcbc solid 1px;
+    border-radius: 5px;
+    margin-bottom: 50px;
+}
+.hlp-sec h3 {
+    font-size: 16px;
+    background: #a5a5a5;
+    padding: 15px;
+    margin: 0;
+    color: #333;
+}
+.hlp-sec-in {
+    padding: 35px 50px 50px;
+}
+/*  help page */
