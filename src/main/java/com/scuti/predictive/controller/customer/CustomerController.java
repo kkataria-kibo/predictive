@@ -1,4 +1,4 @@
-package com.scuti.predictive.controller;
+package com.scuti.predictive.controller.customer;
 
 import com.scuti.predictive.model.Customer;
 import com.scuti.predictive.repository.CustomerRepository;
@@ -22,6 +22,12 @@ public class CustomerController {
     public String home(Model model) {
         model.addAttribute("customerList", customerRepository.findAll());
         return "/customer/customer";
+    }
+
+    @RequestMapping("/dashboard")
+    public String dashboard(Model model) {
+        model.addAttribute("customerList", customerRepository.findAll());
+        return "/customer/dashboard";
     }
 
     @RequestMapping("/customerUpload")

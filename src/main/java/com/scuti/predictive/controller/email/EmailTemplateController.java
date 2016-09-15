@@ -1,7 +1,5 @@
-package com.scuti.predictive.controller;
+package com.scuti.predictive.controller.email;
 
-import com.scuti.predictive.repository.SearchRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,11 +9,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
  */
 
 @Controller
-public class EmailController {
+public class EmailTemplateController {
 
-    @RequestMapping("/email")
+    @RequestMapping("/templates")
     public String home(Model model) {
-        return "/email/email";
+        return "/email/templates";
     }
 
 
