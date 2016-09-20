@@ -8,7 +8,14 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Document(collection = "Customer")
 public class Customer {
 
+    private Integer userid;
 
+    public Integer getUserid() {
+        return userid;
+    }
+    public void setUserid(Integer userid) {
+        this.userid = userid;
+    }
 
     private String firstName;
     private String lastName;

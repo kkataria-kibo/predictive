@@ -1,9 +1,10 @@
-package com.scuti.predictive.controller;
+package com.scuti.predictive.controller.recommendation;
 
 import com.scuti.predictive.model.Product;
 import com.scuti.predictive.repository.SearchRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
 
 import java.util.Collection;
 
@@ -21,4 +22,16 @@ public class RecommendationAPIController {
     public Collection<Product> recommend(@PathVariable("org") String name) {
         return  productSearchRepository.searchOrgProducts(name);
     }
+
+    @RequestMapping(value = "/{org}/recommendation" , method = RequestMethod.GET , produces = "application/json")
+    public Collection<Product> recommendation(@PathVariable("org") String name) {
+
+        //call spark for customers dataframe
+        new DataframeExample().run();
+
+
+        return  productSearchRepository.searchOrgProducts(name);
+    }
+
+
 }

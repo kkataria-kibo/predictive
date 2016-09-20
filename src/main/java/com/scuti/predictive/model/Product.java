@@ -47,6 +47,15 @@ public class Product {
 	private String price;
 	private String sale_price;
 
+	public Integer getProductid() {
+		return productid;
+	}
+
+	public void setProductid(Integer productid) {
+		this.productid = productid;
+	}
+
+	private Integer productid;
 	public String getColor() {
 		return color;
 	}
