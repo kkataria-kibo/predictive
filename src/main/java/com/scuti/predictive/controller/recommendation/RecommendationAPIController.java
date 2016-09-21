@@ -25,10 +25,7 @@ public class RecommendationAPIController {
 
     @RequestMapping(value = "/{org}/recommendation" , method = RequestMethod.GET , produces = "application/json")
     public Collection<Product> recommendation(@PathVariable("org") String name) {
-
-        //call spark for customers dataframe
-        new DataframeExample().run();
-
+        
 
         return  productSearchRepository.searchOrgProducts(name);
     }
